@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -37,6 +38,7 @@ public class Output extends Application{
 		stage = arg0;
 		stage.setTitle("Color Picker Output");
 		stage.setResizable(false);
+		stage.getIcons().add(new Image(Output.class.getResourceAsStream("ColorPicker.png")));
 
 		BorderPane root = new BorderPane();
 		Scene scene = new Scene(root, width, height);
