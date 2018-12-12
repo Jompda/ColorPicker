@@ -6,7 +6,6 @@ import java.util.Date;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
@@ -30,17 +29,17 @@ public class Output extends Application{
 
 	static SimpleDateFormat dateFormat;
 
+	private int width = 270, height = 370;
+
 	//yeye i know that the code looks horrible but it works
 	@Override
 	public void start(Stage arg0) throws Exception {
 		stage = arg0;
-		stage.setWidth(300);
-		stage.setHeight(400);
 		stage.setTitle("Color Picker Output");
 		stage.setResizable(false);
 
-		Scene scene = new Scene(new Group());
 		BorderPane root = new BorderPane();
+		Scene scene = new Scene(root, width, height);
 
 		VBox top = new VBox();
 		top.setAlignment(Pos.CENTER);
@@ -144,7 +143,9 @@ public class Output extends Application{
 		//display the stage and do some little tweaking..
 		scene.setRoot(root);
 		stage.setScene(scene);
+		stage.sizeToScene();
 		stage.show();
+		stage.centerOnScreen();
 
 		stage.setOnCloseRequest(e -> {
 			printInfo("Exiting..");
